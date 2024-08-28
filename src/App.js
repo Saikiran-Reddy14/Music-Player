@@ -51,6 +51,7 @@ const App = () => {
           : currentTopSong
           ? `${currentTopSong.accent}`
           : "#333",
+        transition: "all 0.5s ease-in",
       }}
     >
       <div className="logo-profile">

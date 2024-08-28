@@ -11,6 +11,8 @@ const SongsList = ({
   setCurrentSong,
   setPlaying,
   index,
+  currentSong,
+  currentTopSong,
 }) => {
   const [activeTab, setActiveTab] = useState("default");
 
@@ -69,11 +71,7 @@ const SongsList = ({
                   setIndex(ind);
                   setCurrentSong(song);
                   setPlaying(true);
-                }}
-                style={{
-                  border: index === ind ? "1px solid black" : "",
-                  backgroundColor: index === ind ? "#aaa" : "",
-                  color: index === ind ? "black" : "",
+                  setSearch("");
                 }}
               >
                 <img
@@ -97,11 +95,7 @@ const SongsList = ({
                   setIndex(ind);
                   setCurrentTopSong(song);
                   setPlayingTopTrack(true);
-                }}
-                style={{
-                  border: index === ind ? "1px solid black" : "",
-                  backgroundColor: index === ind ? "#aaa" : "",
-                  color: index === ind ? "black" : "",
+                  setSearch("");
                 }}
               >
                 <img

@@ -70,6 +70,8 @@ const App = () => {
           index={index}
           search={search}
           setSearch={setSearch}
+          currentSong={currentSong}
+          currentTopSong={currentTopSong}
         />
         <Player
           songs={songs}

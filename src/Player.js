@@ -36,7 +36,7 @@ const Player = ({
     }
   };
 
-  const handlePrev = () => {
+  const handlePreviousSong = () => {
     if (currentSong) {
       setIndex((prevIndex) => {
         const newIndex = prevIndex === 0 ? songs.length - 1 : prevIndex - 1;
@@ -54,7 +54,7 @@ const Player = ({
     }
   };
 
-  const handleNext = () => {
+  const handleNextSong = () => {
     if (currentSong) {
       setIndex((prevIndex) => {
         const newIndex = prevIndex === songs.length - 1 ? 0 : prevIndex + 1;
@@ -72,7 +72,7 @@ const Player = ({
     }
   };
 
-  const handleEnded = () => {
+  const handleSongEnded = () => {
     if (currentSong) {
       setPlaying(false);
     } else if (currentTopSong) {
@@ -105,7 +105,7 @@ const Player = ({
             url={currentSong ? currentSong.url : currentTopSong.url}
             playing={currentSong ? playing : playingTopTrack}
             onProgress={handleProgress}
-            onEnded={handleEnded}
+            onEnded={handleSongEnded}
             width="0px"
             height="0px"
           />
@@ -118,7 +118,7 @@ const Player = ({
             style={{ width: "100%" }}
           />
           <div className="buttons">
-            <button onClick={handlePrev} className="btn">
+            <button onClick={handlePreviousSong} className="btn">
               <ion-icon name="play-back-outline"></ion-icon>
             </button>
             <button className="btn" onClick={handlePlayPause}>
@@ -134,7 +134,7 @@ const Player = ({
                 <ion-icon name="play-outline"></ion-icon>
               )}
             </button>
-            <button className="btn" onClick={handleNext}>
+            <button className="btn" onClick={handleNextSong}>
               <ion-icon name="play-forward-outline"></ion-icon>
             </button>
           </div>

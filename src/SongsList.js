@@ -34,6 +34,7 @@ const SongsList = ({
             onClick={() => {
               setActiveTab("default");
               setIndex(null);
+              setSearch("");
             }}
             style={{ opacity: activeTab !== "default" ? 0.6 : 1 }}
           >
@@ -43,6 +44,7 @@ const SongsList = ({
             onClick={() => {
               setActiveTab("top");
               setIndex(null);
+              setSearch("");
             }}
             style={{ opacity: activeTab !== "top" ? 0.6 : 1 }}
           >
